@@ -1,2 +1,3 @@
 # jibe-demo
-Example node application making use of jibe.
+
+This application demonstrates how to integrate jibe into your application.

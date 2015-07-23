@@ -1,4 +1,29 @@
 var Demo = (function () {
+
+  // from http://www.esolcourses.com/content/exercises/grammar/adjectives/personality/more-words-for-describing-personality.html
+  var adjectives = [
+    "affectionate", "aggressive", "ambitious", "anxious", "artistic", "bad-tempered",
+    "big-headed", "boring", "bossy", "charismatic", "creative", "courageous",
+    "dependable", "devious", "dim", "extroverted", "egotistical", "gregarious",
+    "impulsive", "intelligent", "introverted", "industrious", "joyful", "reliable",
+    "sociable", "sympathetic", "talkative", "upbeat"
+  ];
+
+  // from https://www.randomlists.com/nouns
+  var nouns = [
+    "spoon", "cannon", "riddle", "air", "transport", "ducks", "food", "clown",
+    "voice", "elephant", "coast", "pan", "field", "committee", "ring", "trampoline", "men",
+    "rings", "hat", "fire", "turkey", "hot pocket", "flavor", "cup", "test", "pet",
+    "mom", "cook", "spade", "shake", "turtle"
+  ];
+
+  function generateUsername() {
+    var adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+    var noun = nouns[Math.floor(Math.random() * nouns.length)];
+
+    return adj + ' ' + noun;
+  }
+
   function readCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -32,7 +57,6 @@ var Demo = (function () {
 
   function loadJibe() {
     $(function () {
-      console.log('loadjibe');
       $("#jibe-container").jibe({
         template: "/templates/editor.html",
         defaultText: "Default text"
@@ -42,7 +66,6 @@ var Demo = (function () {
 
   return {
     init: function () {
-      console.log('init');
       var username = readCookie('username');
 
       if (!username) {
@@ -50,8 +73,7 @@ var Demo = (function () {
         // the user has not been here before
         // give/solicit a username, give some information
 
-        // TODO generate better prepopulated usernames
-        username = 'suggested_username';
+        username = generateUsername();
         setCookie('username', username);
 
         loadTemplate('demo_modals', 'username-modal', function (template) {

@@ -73,14 +73,20 @@
     <script src="js/toc.js"></script>
     <script src="js/jibe.js"></script>
 
+    <!-- scripts particular to the demo -->
+    <script src="lib/handlebars/dist/handlebars.min.js"></script>
+    <script src="js/demo.js"></script>
+
     <!-- initialize jibe -->
     <script type="text/javascript">
-      $(function () {
-        $("#jibe-container").jibe({
-          template: "/templates/editor.html",
-          defaultText: "Default text"
-        });
-      });
+      // $(function () {
+      //   $("#jibe-container").jibe({
+      //     template: "/templates/editor.html",
+      //     defaultText: "Default text"
+      //   });
+      // });
+
+      Demo.init();
     </script>
   </body>
 </html>

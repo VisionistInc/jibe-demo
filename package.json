@@ -21,6 +21,7 @@
   "homepage": "https://github.com/VisionistInc/jibe-demo#readme",
   "dependencies": {
     "express": "^4.13.1",
+    "handlebars": "^3.0.3",
     "jibe": "^1.0.0",
     "socket.io": "^1.3.6"
   }

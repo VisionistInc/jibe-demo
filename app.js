@@ -17,6 +17,9 @@ var express = require('express'),
 // this ensures jibe-demo's index.html is used
 app.use(express.static(__dirname + '/public', {maxAge:31557600000}));
 
+// serve node_modules from the lib directory
+app.use('/lib', express.static(__dirname + '/node_modules', {maxAge:31557600000}));
+
 // initialize jibe, mount jibe router and browser channel
 app.use(jibe.router(io));
 app.use(jibe.browserChannelMiddleware);

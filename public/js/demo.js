@@ -59,7 +59,8 @@ var Demo = (function () {
     $(function () {
       $("#jibe-container").jibe({
         template: "/templates/editor.html",
-        defaultText: "Default text"
+        defaultText: "# Welcome to {{room}}!\n\n\n",
+        placeholder: "This is a configurable placeholder, type your text here..."
       });
     });
   }
